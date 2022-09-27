@@ -3,7 +3,7 @@ package com.aliciaspringframework.recipeapp.models;
 import javax.persistence.*;
 
 @Entity
-public class Note {
+public class Notes {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,7 +13,7 @@ public class Note {
     private Recipe recipe;
 
     @Lob
-    private String recipeNote;
+    private String recipeNotes;
 
     public Long getId() {
         return id;
@@ -31,11 +31,11 @@ public class Note {
         this.recipe = recipe;
     }
 
-    public String getRecipeNote() {
-        return recipeNote;
+    public String getRecipeNotes() {
+        return recipeNotes;
     }
 
-    public void setRecipeNote(String recipeNote) {
-        this.recipeNote = recipeNote;
+    public void setRecipeNotes(String recipeNote) {
+        this.recipeNotes = recipeNote;
     }
 }
