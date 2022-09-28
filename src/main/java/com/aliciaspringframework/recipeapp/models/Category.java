@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Data
-@EqualsAndHashCode(exclude = {"recipes"})
+@EqualsAndHashCode(exclude = {"recipes"})  //needed b/c bi-directional relationships creates an endless loop with equals and hashcode method & causes a stack overflow error
 @Entity
 public class Category {
 
