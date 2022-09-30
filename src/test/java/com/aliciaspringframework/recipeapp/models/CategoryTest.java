@@ -1,7 +1,7 @@
 package com.aliciaspringframework.recipeapp.models;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -9,12 +9,12 @@ public class CategoryTest {
 
     Category category;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         category = new Category();
     }
 
-    @org.junit.Test
+    @Test
     public void getId() {
         Long idValue = 4L;
         category.setId(idValue);

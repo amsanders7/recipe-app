@@ -2,8 +2,8 @@ package com.aliciaspringframework.recipeapp.controllers;
 
 import com.aliciaspringframework.recipeapp.models.Recipe;
 import com.aliciaspringframework.recipeapp.services.RecipeService;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -31,7 +31,7 @@ public class IndexControllerTest {
 
     IndexController controller;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
 
