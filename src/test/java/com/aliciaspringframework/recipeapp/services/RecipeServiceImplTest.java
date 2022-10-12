@@ -1,5 +1,7 @@
 package com.aliciaspringframework.recipeapp.services;
 
+import com.aliciaspringframework.recipeapp.converters.RecipeCommandToRecipe;
+import com.aliciaspringframework.recipeapp.converters.RecipeToRecipeCommand;
 import com.aliciaspringframework.recipeapp.models.Recipe;
 import com.aliciaspringframework.recipeapp.repositories.RecipeRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -22,10 +24,16 @@ public class RecipeServiceImplTest {
     @Mock
     RecipeRepository recipeRepository;
 
+    @Mock
+    RecipeToRecipeCommand recipeToRecipeCommand;
+
+    @Mock
+    RecipeCommandToRecipe recipeCommandToRecipe;
+
     @BeforeEach
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
-        recipeService = new RecipeServiceImpl(recipeRepository);
+        recipeService = new RecipeServiceImpl(recipeRepository, recipeCommandToRecipe, recipeToRecipeCommand);
     }
 
     @Test
