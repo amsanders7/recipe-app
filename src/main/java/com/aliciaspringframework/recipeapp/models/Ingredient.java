@@ -1,14 +1,20 @@
 package com.aliciaspringframework.recipeapp.models;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data
 @EqualsAndHashCode(exclude = {"recipe"})
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class Ingredient {
 
     @Id
@@ -27,17 +33,6 @@ public class Ingredient {
         this.description = description;
         this.amount = amount;
         this.uom = uom;
-    }
-
-    public Ingredient(String description, BigDecimal amount, UnitOfMeasure uom, Recipe recipe) {
-        this.description = description;
-        this.amount = amount;
-        this.uom = uom;
-        this.recipe = recipe;
-    }
-
-    public Ingredient() {
-
     }
 
 }
