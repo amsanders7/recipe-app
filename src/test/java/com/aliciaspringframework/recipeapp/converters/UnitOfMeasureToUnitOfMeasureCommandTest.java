@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 public class UnitOfMeasureToUnitOfMeasureCommandTest {
 
     public static final String DESCRIPTION = "description";
-    public static final Long LONG_VALUE = new Long(1L);
+    public static final Long LONG_VALUE = 1L;
 
     UnitOfMeasureToUnitOfMeasureCommand converter;
 
@@ -27,7 +27,7 @@ public class UnitOfMeasureToUnitOfMeasureCommandTest {
     }
 
     @Test
-    public void testEmptyObj() throws Exception {
+    public void testEmptyObject() throws Exception {
         assertNotNull(converter.convert(new UnitOfMeasure()));
     }
 
