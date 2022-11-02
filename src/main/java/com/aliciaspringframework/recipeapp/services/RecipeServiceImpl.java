@@ -3,6 +3,7 @@ package com.aliciaspringframework.recipeapp.services;
 import com.aliciaspringframework.recipeapp.commands.RecipeCommand;
 import com.aliciaspringframework.recipeapp.converters.RecipeCommandToRecipe;
 import com.aliciaspringframework.recipeapp.converters.RecipeToRecipeCommand;
+import com.aliciaspringframework.recipeapp.exceptions.NotFoundException;
 import com.aliciaspringframework.recipeapp.models.Recipe;
 import com.aliciaspringframework.recipeapp.repositories.RecipeRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -43,7 +44,7 @@ public class RecipeServiceImpl implements RecipeService {
         Optional<Recipe> recipeOptional = recipeRepository.findById(id);
 
         if (recipeOptional.isEmpty()) {
-            throw new RuntimeException("Recipe not found!");
+            throw new NotFoundException("Recipe not found for id value: " + id);
         }
         return recipeOptional.get();
     }
